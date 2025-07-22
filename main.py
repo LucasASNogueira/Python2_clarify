@@ -16,13 +16,13 @@ def init_db():
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS inadimplencia(
                 mes TEXT PRIMARY KEY,
-                inadimplencia REAL,
+                inadimplencia REAL
             )
         ''')    
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS selic(
                 mes TEXT PRIMARY KEY,
-                selic_diaria REAL,
+                selic_diaria REAL
             )
         ''')
         conn.commit()
@@ -35,8 +35,8 @@ def index():
         <h1>Upload de dados Economicos</h1>
         <form action='/upload' method = 'POST' 
         enctype="multipart/form-data"> 
-            <label> for='campo_inadimplencia'> Arquivo de Inadimplência</label>
-            <input name='campo_inadimplencia' type='file required><br><br>
+            <label for='campo_inadimplencia'> Arquivo de Inadimplência</label>
+            <input name='campo_inadimplencia' type='file' required><br><br>
                                   
             <label for='campo_selic'> Arquivo Taxa Selic</label>
             <input name='campo_selic' type='file' required><br><br> 
